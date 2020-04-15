@@ -42,7 +42,13 @@ public class MainMenu extends AppCompatActivity {
 
         button11.setOnClickListener(new View.OnClickListener() { //next
             public void onClick(View v) {
-                jumptomain2();
+                //TextView t=(TextView) findViewById(R.id.editText4);
+                String barcode =  "100";
+                Intent intent3 =new Intent(getApplicationContext(), Main2Activity.class);
+                intent3.putExtra("barcode",barcode);
+                intent3.putExtra("points","10");
+                startActivity(intent3);
+                //jumptomain2();
             }
         });
     }

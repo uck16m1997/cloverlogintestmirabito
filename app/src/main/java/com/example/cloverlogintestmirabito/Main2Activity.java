@@ -36,7 +36,7 @@ public class Main2Activity extends AppCompatActivity {
 
 
         for(int i=0;i<Offerlist.Offers.size();i++) {
-
+            //Offerlist.getoffer(i).dummyjson();
             Button myButton = new Button(this);
             myButton.setText(Offerlist.getoffer(i).buttonText);
             myButton.setTranslationX(x);
