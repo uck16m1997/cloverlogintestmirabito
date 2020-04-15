@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cloverlogintestmirabito</string>
+    <string name="title_activity_clover_test">CloverTest</string>
+    <string name="read_by_barcode">Read By Barcode</string>
+    <string name="read_by_swipe">Read By Swipe</string>
+    <string name="enter_card_number">Enter Card Number</string>
+    <string name="next">Next</string>
+    <string name="textview">TextView</string>
+</resources>
