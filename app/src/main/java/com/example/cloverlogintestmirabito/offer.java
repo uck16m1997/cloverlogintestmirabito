@@ -29,6 +29,22 @@ public class offer {
         this.Mult=Mult; //limit or mult
         this.Limit=Limit;
     }
+    public offer(){
+
+
+    }
+    public offer(offer of){
+        this.name=of.name;
+        this.desc=of.desc;
+        this.buttonText=of.buttonText;
+        this.prompt=of.prompt;
+        this.type=of.type;//1,2,3
+        this.condition=of.condition;//do this to get started
+        this.unit=of.unit;
+        this.reward=of.reward;
+        this.Mult=of.Mult; //limit or mult
+        this.Limit=of.Limit;
+    }
 
     public String getName() {
         return name;

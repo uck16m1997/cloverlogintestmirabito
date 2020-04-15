@@ -37,6 +37,7 @@ public class MainMenu extends AppCompatActivity {
         button9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
+                jumpjson();
             }
         });
 
@@ -52,7 +53,11 @@ public class MainMenu extends AppCompatActivity {
             }
         });
     }
-
+    public void jumpjson(){
+        Intent intent =new Intent(this, jasonactivity.class);
+        startActivity(intent);
+        //null check TODO
+    }
     public void jumptobarcode(){
         Intent intent =new Intent(this, BarcodeScannerTestActivity.class);
         startActivity(intent);

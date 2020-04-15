@@ -6,4 +6,5 @@
     <string name="enter_card_number">Enter Card Number</string>
     <string name="next">Next</string>
     <string name="textview">TextView</string>
+    <string name="title_activity_jasonactivity">jasonactivity</string>
 </resources>
