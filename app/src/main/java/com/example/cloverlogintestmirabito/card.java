@@ -1,3 +1,5 @@
+package com.example.cloverlogintestmirabito;
+
 public class card {
 
 
@@ -37,5 +39,6 @@ public class card {
         this.name=name;
         this.point=point;
     }
+    public card(){}
 
 }

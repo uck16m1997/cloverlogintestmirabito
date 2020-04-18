@@ -50,20 +50,14 @@ public class BarcodeScannerTestActivity extends Activity {
             if (barcodeResult.isBarcodeAction()) {
                 String barcode = barcodeResult.getBarcode();
                 resultTV.setText(barcode);
-                if(barcode.compareTo("62993748264949534")==0)
-                {
+                MockApi mock=new MockApi();
+
+                if(mock.card_check(barcode)){
                     Intent intent3 =new Intent(getApplicationContext(), Main2Activity.class);
                     intent3.putExtra("barcode",barcode);
-                    intent3.putExtra("points","10");
                     startActivity(intent3);
                 }
-                else if(barcode.compareTo("62993748264949535")==0)
-                {
-                    Intent intent3 =new Intent(getApplicationContext(), Main2Activity.class);
-                    intent3.putExtra("barcode",barcode);
-                    intent3.putExtra("points","5");
-                    startActivity(intent3);
-                }else{
+                else{
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
                     builder1.setMessage("Invalid Card");
                     builder1.setCancelable(false);
@@ -80,6 +74,7 @@ public class BarcodeScannerTestActivity extends Activity {
 
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
+
                 }
             }
         }

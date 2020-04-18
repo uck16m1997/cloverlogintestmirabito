@@ -44,10 +44,10 @@ public class MainMenu extends AppCompatActivity {
         button11.setOnClickListener(new View.OnClickListener() { //next
             public void onClick(View v) {
                 //TextView t=(TextView) findViewById(R.id.editText4);
-                String barcode =  "100";
+                String barcode =  "62993748264949534";
                 Intent intent3 =new Intent(getApplicationContext(), Main2Activity.class);
                 intent3.putExtra("barcode",barcode);
-                intent3.putExtra("points","10");
+
                 startActivity(intent3);
                 //jumptomain2();
             }
@@ -66,21 +66,14 @@ public class MainMenu extends AppCompatActivity {
     public void jumptomain2(){
         TextView t=(TextView) findViewById(R.id.editText4);
         String barcode =  t.getText().toString();
+        MockApi mock=new MockApi();
 
-        if(barcode.compareTo("62993748264949534")==0)
-        {
+        if(mock.card_check(barcode)){
             Intent intent3 =new Intent(getApplicationContext(), Main2Activity.class);
             intent3.putExtra("barcode",barcode);
-            intent3.putExtra("points","10");
             startActivity(intent3);
         }
-        else if(barcode.compareTo("62993748264949535")==0)
-        {
-            Intent intent3 =new Intent(getApplicationContext(), Main2Activity.class);
-            intent3.putExtra("barcode",barcode);
-            intent3.putExtra("points","5");
-            startActivity(intent3);
-        }else{
+        else{
             AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
             builder1.setMessage("Invalid Card");
             builder1.setCancelable(false);

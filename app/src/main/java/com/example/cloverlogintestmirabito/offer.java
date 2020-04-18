@@ -1,5 +1,9 @@
 package com.example.cloverlogintestmirabito;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.json.JSONObject;
+
 public class offer {
 
 
@@ -45,7 +49,32 @@ public class offer {
         this.Mult=of.Mult; //limit or mult
         this.Limit=of.Limit;
     }
+    public JSONObject dummyjson(){
+        offer of =new offer(this);
+        ObjectMapper mapper = new ObjectMapper();
+        JSONObject jo = new JSONObject();
+        try {
+            String jsonstring = mapper.writeValueAsString(of);
+            jo = new JSONObject(jsonstring);
+        }catch(Exception e )
+        {
 
+        }
+        return jo;//fornow
+
+    }
+
+    public offer Json2Offer(JSONObject jo){
+        offer of = new offer();
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            of = mapper.readValue(jo.toString(), offer.class);
+        }catch(Exception e )
+        {
+
+        }
+        return of;
+    }
     public String getName() {
         return name;
     }

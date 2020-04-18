@@ -14,7 +14,8 @@ public class Main2Activity extends AppCompatActivity {
     private Button button22;
     private TextView textView6;
     private TextView textView7;
-    offers Offerlist=new offers().dummy_offers();
+    offers Offerlist=new offers();
+    MockApi mock=new MockApi();
 
 
 
@@ -27,16 +28,21 @@ public class Main2Activity extends AppCompatActivity {
         textView6=(TextView) findViewById(R.id.textView6);
         textView6.setText(barcode);
 
-        String points=intent.getStringExtra("points");
+
+        Offerlist=mock.getoffers(barcode);
+        card c=mock.getcard(barcode);
+
+
+       //String points=intent.getStringExtra("points");
         textView7=(TextView) findViewById(R.id.textView7);
-        textView7.setText(points);
+        textView7.setText(String.valueOf(c.point));
 
         Integer x=270;
         Integer y=380;
 
 
         for(int i=0;i<Offerlist.Offers.size();i++) {
-            //Offerlist.getoffer(i).dummyjson();
+            //offer of = Offerlist.getoffer(i).Json2Offer(Offerlist.getoffer(i).dummyjson());
             Button myButton = new Button(this);
             myButton.setText(Offerlist.getoffer(i).buttonText);
             myButton.setTranslationX(x);
